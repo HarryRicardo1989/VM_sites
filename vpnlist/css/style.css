@@ -1,0 +1,91 @@
+/* styles.css */
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 50%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background-color: #2c3940;
+    /* Cinza escuro com toque azulado para o fundo do título da tabela */
+    color: #ffffff;
+
+}
+
+th {
+    padding: 10px;
+    text-align: left;
+    /* Adiciona borda horizontal nas células do cabeçalho */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #444444;
+}
+
+td {
+    padding: 10px;
+}
+
+td:not(:last-child) {
+    border-right: 1px solid #cccccc;
+
+    /* Adiciona borda vertical nas células do corpo da tabela, exceto na última coluna */
+}
+
+tfoot {
+    background-color: #2c3940;
+    /* Cinza escuro com toque azulado para o rodapé da tabela */
+    color: #ffffff;
+    text-align: center;
+}
+
+tfoot p {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+}
+
+footer {
+    background-color: #444444;
+    /* Cinza escuro com toque azulado para o rodapé da tabela */
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+footer p {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+}
+
+#currentYear {
+    font-weight: bold;
+}
+
+/* Restante do seu estilo CSS... */

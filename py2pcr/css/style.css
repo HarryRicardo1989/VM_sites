@@ -1,0 +1,17 @@
+html {
+    color-scheme: light dark;
+}
+
+body {
+    width: 35em;
+    margin: 0 auto;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    background-image: url('../img/py2pcr_3.png');
+    /* Adiciona a imagem de fundo */
+    background-size: auto;
+    align-items: center;
+
+    background-repeat: no-repeat;
+    /* Evita a repetição da imagem */
+
+}

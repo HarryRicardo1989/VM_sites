@@ -4,25 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitoramento PCD</title>
+    <title>Monitoramento Meteorologico</title>
+    <link rel="shortcut icon" href="img/logo_gajosGamers.ico" />
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <header>
+        <h1>Monitoramento em tempo real. </h1>
+        <h2>Dados coletados a cada 30s com atualizaçao direta, por enquanto sem banco de dados para armazenamento</h2>
+    </header>
+    <h1>Dados da Estação METEOR</h1>
     <div class="container">
-        <h1>Dados da Estação PCD</h1>
-        <table id="dadosPcd">
-            <thead>
-                <tr>
-                    <th>MAC Address</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Os dados do JSON serão inseridos aqui via JavaScript -->
-            </tbody>
-        </table>
+        <!-- As caixas com os dados serão inseridas aqui via JavaScript -->
     </div>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> RicardoPaschoali. Todos os direitos reservados.</p>
+    </footer>
     <script src="js/script.js"></script>
+    <script src="js/footer.js"></script>
 </body>
 
 </html>

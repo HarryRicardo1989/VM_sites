@@ -1,44 +1,59 @@
 async function atualizarDadosPcd() {
     try {
-        const resposta = await fetch('/pcd-data'); // Faz a requisição para o servidor
+        const resposta = await fetch('/pcd-data');
         if (!resposta.ok) {
             throw new Error('Falha ao obter dados');
         }
-        const dados = await resposta.json(); // Converte a resposta de JSON para um objeto JavaScript
+        const dados = await resposta.json();
 
-        // Limpa os dados anteriores
-        const corpoTabela = document.getElementById('dadosPcd').getElementsByTagName('tbody')[0];
-        corpoTabela.innerHTML = '';
+        const container = document.querySelector('.container');
+        container.innerHTML = ''; // Limpa os dados antigos
 
-        // Insere os novos dados na tabela
         Object.keys(dados).forEach(mac => {
             const pcd = dados[mac];
-            const linha = corpoTabela.insertRow(-1);
+            const box = document.createElement('div');
+            box.className = 'box';
 
-            const celulaMac = linha.insertCell(0);
-            celulaMac.textContent = mac;
+            const titulo = document.createElement('h2');
+            titulo.textContent = `Dispositivo: ${mac}`;
+            box.appendChild(titulo);
 
-            const celulaTemperatura = linha.insertCell(1);
-            celulaTemperatura.textContent = pcd.event.temperature + ' °C';
+            const ultimaColeta = document.createElement('p');
+            ultimaColeta.className = 'ultima-coleta';
+            ultimaColeta.textContent = `Última Coleta: ${new Date(pcd.event.timestamp).toLocaleString('pt-BR')}`;
+            box.appendChild(ultimaColeta);
 
-            const celulaPressao = linha.insertCell(2);
-            celulaPressao.textContent = pcd.event.pressure + ' hPa';
+            const tabela = document.createElement('table');
+            tabela.className = 'table-vertical';
 
-            const celulaUmidade = linha.insertCell(3);
-            celulaUmidade.textContent = pcd.event.humidity + '%';
+            const dadosPcd = [
+                { nome: 'Temperatura', valor: `${pcd.event.temperature} °C` },
+                { nome: 'Pressão', valor: `${pcd.event.pressure} hPa` },
+                { nome: 'Umidade', valor: `${pcd.event.humidity}%` },
+                { nome: 'Nível da Bateria', valor: `${pcd.battery.level}%` },
+                // Adicione mais dados conforme necessário
+            ];
 
-            const celulaBateria = linha.insertCell(4);
-            celulaBateria.textContent = pcd.battery.level + '%';
+            dadosPcd.forEach((dado, index) => {
+                const linha = tabela.insertRow();
+                const celulaNome = linha.insertCell();
+                celulaNome.textContent = dado.nome;
 
-            // Adiciona mais células conforme necessário para os outros dados
+                const celulaValor = linha.insertCell();
+                celulaValor.textContent = dado.valor;
+
+                if (index < dadosPcd.length - 1) {
+                    linha.className = 'linha-dados';
+                }
+            });
+
+            box.appendChild(tabela);
+            container.appendChild(box);
         });
     } catch (erro) {
         console.error('Erro ao atualizar dados:', erro);
     }
 }
 
-// Atualiza os dados imediatamente ao carregar a página
 atualizarDadosPcd();
-
-// Define um intervalo para atualizar os dados a cada 30 segundos
 setInterval(atualizarDadosPcd, 30000);

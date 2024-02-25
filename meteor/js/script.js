@@ -1,6 +1,9 @@
+
 async function atualizarDadosPcd() {
     try {
-        const resposta = await fetch('/pcd-data');
+        const resposta = await fetch('/pcd-data', {
+            cache: 'no-cache'
+        });
         if (!resposta.ok) {
             throw new Error('Falha ao obter dados');
         }
@@ -14,7 +17,7 @@ async function atualizarDadosPcd() {
             const box = document.createElement('div');
             box.className = 'box';
 
-            const titulo = document.createElement('h2');
+            const titulo = document.createElement('h3');
             titulo.textContent = `Dispositivo: ${mac}`;
             box.appendChild(titulo);
 
@@ -27,10 +30,14 @@ async function atualizarDadosPcd() {
             tabela.className = 'table-vertical';
 
             const dadosPcd = [
-                { nome: 'Temperatura', valor: `${pcd.event.temperature} °C` },
-                { nome: 'Pressão', valor: `${pcd.event.pressure} hPa` },
+                { nome: 'Temperatura', valor: `${pcd.event.temperature}°C` },
                 { nome: 'Umidade', valor: `${pcd.event.humidity}%` },
+                { nome: 'Pressão', valor: `${pcd.event.pressure}hPa` },
+                { nome: 'Ponto de Orvalho', valor: `${pcd.event.dewpoint}ºC` },
                 { nome: 'Nível da Bateria', valor: `${pcd.battery.level}%` },
+                { nome: 'Tensao da Bateria', valor: `${pcd.battery.voltage}mV` },
+                { nome: 'Charging status', valor: `${pcd.battery.charging === 1 ? true : false}` },
+                { nome: 'Charged status', valor: `${pcd.battery.charged === 1 ? true : false}` },
                 // Adicione mais dados conforme necessário
             ];
 

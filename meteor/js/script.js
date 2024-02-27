@@ -11,13 +11,20 @@ async function atualizarDadosPcd() {
         const container = document.querySelector('.container');
         container.innerHTML = ''; // Limpa os dados antigos
 
-        // Como agora 'dados' é um array, usamos forEach diretamente nele
+        // Mapeamento de IDs para nomes amigáveis
+        const nomesDispositivos = {
+            'METEOR-4C:75:25:F5:65:3C': 'Telhado',
+            'METEOR-4C:75:25:F3:C1:F4': 'Externo'
+        };
+
         dados.forEach(pcd => {
             const box = document.createElement('div');
             box.className = 'box';
 
+            // Usa o mapeamento para substituir o ID por um nome amigável, se disponível
+            const nomeDispositivo = nomesDispositivos[pcd.device_id] || pcd.device_id;
             const titulo = document.createElement('h3');
-            titulo.textContent = `Dispositivo: ${pcd.device_id}`;
+            titulo.textContent = `Dispositivo: ${nomeDispositivo}`; // Substituído pelo nome amigável
             box.appendChild(titulo);
 
             const ultimaColeta = document.createElement('p');
@@ -61,4 +68,4 @@ async function atualizarDadosPcd() {
 }
 
 atualizarDadosPcd();
-setInterval(atualizarDadosPcd, 30000);
+setInterval(atualizarDadosPcd, 300000);

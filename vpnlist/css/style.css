@@ -1,10 +1,9 @@
 body {
     background-color: #1a1a1a;
-    background-image: url('../img/vpnlist_mobile.png');
+    background-image: url('../img/vnlist_2.png');
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
-    color: #ffffff;
     font-family: Arial, sans-serif;
     text-align: center;
 
@@ -13,22 +12,23 @@ body {
 header {
     text-align: center;
     padding: 1px;
-    border: 2px solid #000000;
+    border: 2px solid #f2ff0071;
+    border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
-    width: 80%;
+    width: 35%;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 10px;
+    margin-bottom: 2vw;
 
 }
 
 h1 {
     position: relative;
     background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.60);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
     color: #ffffffac;
     border-radius: 5px;
-    width: 90vh;
+    width: 30vh;
     font-size: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -60,7 +60,7 @@ table {
 }
 
 #vpnTable {
-    border: 2px solid #ffffff4d;
+    border: 2px solid #f2ff0071;
 
 }
 
@@ -76,13 +76,13 @@ th {
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.60);
     color: #00e1ffd2;
-    border-bottom: 2px solid #ffffff4d;
+    border-bottom: 2px solid #f2ff0071;
 
     /* Adiciona borda horizontal nas células do cabeçalho */
 }
 
 th:not(:last-child) {
-    border-right: 2px solid #ffffff4d;
+    border-right: 2px solid #f2ff0071;
 
 }
 
@@ -99,8 +99,8 @@ td {
 }
 
 td:not(:last-child) {
-    border-right: 2px solid #ffffff4d;
-    border-bottom: 2px solid #ffffff4d;
+    border-right: 2px solid #f2ff0071;
+    border-bottom: 2px solid #f2ff0071;
 
     /* Adiciona borda vertical nas células do corpo da tabela, exceto na última coluna */
 }
@@ -151,6 +151,10 @@ footer {
 
     }
 
+    header {
+        width: 55%;
+    }
+
     h1 {
         background-color: rgba(0, 0, 0, 0.6);
         width: 95%;
@@ -159,7 +163,7 @@ footer {
     }
 
     h2 {
-        width: 30vh;
+        width: 40vh;
 
         margin: auto;
         font-weight: bold;
@@ -173,9 +177,13 @@ footer {
         background-position: top;
     }
 
+    header {
+        width: 55%;
+    }
+
     h1 {
         background-color: rgba(0, 0, 0, 0.6);
-        font-size: 5vw;
+        font-size: 8vw;
         margin-top: 10px;
         margin-bottom: 20px;
         font-weight: bold;
@@ -186,6 +194,7 @@ footer {
     h2 {
         background-color: rgba(0, 0, 0, 0.6);
         margin-top: 10px;
+        width: 40vh;
         margin-bottom: 20px;
         width: 10vh;
         font-weight: bold;

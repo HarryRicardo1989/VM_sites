@@ -54,7 +54,7 @@ async function atualizarDadosPcd() {
                 const celulaValor = linha.insertCell();
                 celulaValor.textContent = dado.valor;
 
-                if (index < dadosPcd.length - 1) {
+                if (index < dadosPcd.length) {
                     linha.className = 'linha-dados';
                 }
             });

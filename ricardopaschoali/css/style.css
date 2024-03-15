@@ -13,24 +13,41 @@ header {
 
 h1 {
     font-size: 32px;
+    color: #ffffffbf;
     margin-bottom: 10px;
 }
 
 h2 {
     font-size: 20px;
+    color: rgb(44, 166, 175);
     margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    color: rgb(44, 166, 175);
+    margin-bottom: 10px;
 }
 
 .main-content {
     display: flex;
-    justify-content: center;
     align-items: center;
+    background-image: url('../img/eletronica.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90vw;
     flex-direction: column;
     padding: 20px;
+    margin: auto;
 }
 
 .description-box {
-    background-color: #444444;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    width: 60vw;
+    border: 1px solid #000000;
+    justify-content: center;
     padding: 20px;
     margin-bottom: 20px;
     text-align: center;
@@ -47,6 +64,7 @@ footer {
 footer p {
     margin: 0;
     padding: 10px;
+    color: #ffffffbf;
     font-size: 14px;
 }
 

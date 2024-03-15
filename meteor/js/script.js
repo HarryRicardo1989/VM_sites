@@ -14,7 +14,9 @@ async function atualizarDadosPcd() {
         // Mapeamento de IDs para nomes amigáveis
         const nomesDispositivos = {
             'METEOR-4C:75:25:F5:65:3C': 'Telhado',
-            'METEOR-4C:75:25:F3:C1:F4': 'Externo'
+            'METEOR-4C:75:25:F3:C1:F4': 'Externo',
+            'METEOR-4C:75:25:F3:B7:A4': 'Mobile'
+
         };
 
         dados.forEach(pcd => {
@@ -68,4 +70,4 @@ async function atualizarDadosPcd() {
 }
 
 atualizarDadosPcd();
-setInterval(atualizarDadosPcd, 300000);
+setInterval(atualizarDadosPcd, 5000);

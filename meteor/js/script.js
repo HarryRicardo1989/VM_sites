@@ -13,9 +13,10 @@ async function atualizarDadosPcd() {
 
         // Mapeamento de IDs para nomes amigáveis
         const nomesDispositivos = {
+            'METEOR-EC:DA:3B:BF:91:2C': 'Mobile',
             'METEOR-4C:75:25:F5:65:3C': 'Telhado',
             'METEOR-4C:75:25:F3:C1:F4': 'Externo',
-            'METEOR-4C:75:25:F3:B7:A4': 'Mobile'
+            'METEOR-EC:DA:3B:BF:B2:BC': 'Escritorio'
 
         };
 
@@ -42,6 +43,7 @@ async function atualizarDadosPcd() {
                 { nome: 'Umidade', valor: `${pcd.humidity}%` },
                 { nome: 'Pressão', valor: `${pcd.pressure}hPa` },
                 { nome: 'Ponto de Orvalho', valor: `${pcd.dewpoint}ºC` },
+                { nome: 'Altitude', valor: `${pcd.altitude}m` },
                 { nome: 'Nível da Bateria', valor: `${pcd.battery_level}%` },
                 { nome: 'Tensão da Bateria', valor: `${pcd.battery_voltage}mV` },
                 { nome: 'Carregando', valor: pcd.charging ? 'Sim' : 'Não' },

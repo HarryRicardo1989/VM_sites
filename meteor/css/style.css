@@ -26,11 +26,11 @@ h1 {
     color: #ffffffac;
     border-radius: 5px;
     width: 90vh;
-    font-size: 6vh;
+    font-size: 4vh;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
 }
 
 h2 {
@@ -40,13 +40,12 @@ h2 {
     font-size: 2vh;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1vw;
-    margin-top: 1vw;
-    padding: 3px;
+    margin-bottom: 0.5vw;
+    margin-top: 0.5vw;
 }
 
 h3 {
-    font-size: 2vw;
+    font-size: 1.5vw;
     border-radius: 5px;
     color: rgb(44, 166, 175);
     margin-left: auto;
@@ -112,7 +111,7 @@ p {
 
 .table-vertical th,
 .table-vertical td {
-    font-size: 1.4vw;
+    font-size: 1vw;
     padding: 1px 5px;
     margin-top: 2vw;
     margin-left: auto;

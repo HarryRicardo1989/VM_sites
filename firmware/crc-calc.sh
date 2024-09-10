@@ -17,7 +17,7 @@ CRC_VALUE=$(crc32 "$FILE_PATH")
 # Verifica se o comando crc32 foi bem-sucedido
 if [ $? -eq 0 ]; then
     # Salva o valor de CRC no arquivo no mesmo diretório do arquivo original
-    echo "$CRC_VALUE" > "$DIR_PATH/$CRC_FILE"
+    echo -n "$CRC_VALUE" > "$DIR_PATH/$CRC_FILE"
     echo "CRC salvo em $DIR_PATH/$CRC_FILE"
 else
     echo "Erro ao calcular o CRC32 de $FILE_PATH"

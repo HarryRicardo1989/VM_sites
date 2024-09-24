@@ -1,6 +1,6 @@
 async function atualizarDadosPcd() {
     try {
-        const resposta = await fetch('/data/last-data', {
+        const resposta = await fetch('/pcd-data', {
             cache: 'no-cache'
         });
         if (!resposta.ok) {
